@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - orbit.tiff</title>
+  <meta name="description" content="Learn about orbit.tiff - neurodivergent technologist, full-stack developer, and accessibility advocate.">
+  
+  <!-- Design Tokens & Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="orbit.tiff logo" class="site-logo-img">
+        <span>orbit.tiff</span>
+      </a>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="aiPartnership.html">AI Partnership</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
+              Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- ABOUT HERO WITH LANDING PAD -->
+    <section class="about-hero">
+      <h1>Launch Log</h1>
+      
+      <div class="landing-pad" aria-label="Rocket landing zone">
+        <div class="landing-rocket" id="landingRocket">
+          <div class="landing-mission-patch">
+            <img src="images/profile_photo.png" alt="Mission successful" class="landing-rocket-image">
+            <div class="landing-rocket-icon">🚀</div>
+          </div>
+        </div>
+        <div class="landing-pad-base"></div>
+      </div>
+      
+      <p class="hero-tagline">
+        Welcome to mission control. This is where design meets neurodiversity, technology meets empathy, 
+        and every interface is built for clarity.
+      </p>
+    </section>
+
+    <!-- ABOUT CONTENT -->
+    <div class="about-content">
+      
+      <!-- WHO I AM -->
+      <section class="about-section">
+        <h2>Who I Am</h2>
+        <p>
+          I'm <strong>orbit.tiff</strong>, a neurodivergent technologist and full-stack developer 
+          specializing in low-cognitive-load interfaces for aerospace, education, and accessibility-first projects.
+        </p>
+        <p>
+          I design and build systems that reduce overwhelm, prioritize clarity, and meet people where they are. 
+          My work centers around structured design patterns, semantic HTML, and interaction models that honor 
+          diverse ways of thinking and processing information.
+        </p>
+      </section>
+
+      <!-- MY APPROACH -->
+      <section class="about-section">
+        <h2>My Approach</h2>
+        <p>
+          Every project starts with three questions:
+        </p>
+        <ul class="values-list">
+          <li>
+            <strong>What is the cognitive cost?</strong>
+            I measure complexity not just in lines of code, but in the mental load placed on users. 
+            Simpler is almost always better.
+          </li>
+          <li>
+            <strong>Who might be excluded?</strong>
+            Accessibility isn't a feature—it's a foundation. I test with screen readers, keyboard navigation, 
+            and real users across the neurodivergent spectrum.
+          </li>
+          <li>
+            <strong>Can this be more structured?</strong>
+            Patterns, consistency, and predictability reduce uncertainty. I favor design systems over 
+            ad-hoc solutions.
+          </li>
+        </ul>
+      </section>
+
+      <!-- VALUES -->
+      <section class="about-section">
+        <h2>Core Values</h2>
+        <ul class="values-list">
+          <li>
+            <strong>Clarity over cleverness.</strong>
+            Elegant solutions don't need to show off. The best interfaces feel obvious.
+          </li>
+          <li>
+            <strong>Structure reduces anxiety.</strong>
+            Predictable navigation, generous spacing, and clear visual hierarchy create safety.
+          </li>
+          <li>
+            <strong>Motion should be intentional.</strong>
+            Animation enhances meaning or it creates distraction. There is no in-between.
+          </li>
+          <li>
+            <strong>Neurodiversity is design expertise.</strong>
+            My lived experience informs every interaction pattern, every spacing decision, every word I write.
+          </li>
+        </ul>
+      </section>
+
+      <!-- SKILLS & TOOLS -->
+      <section class="about-section">
+        <h2>Skills & Tools</h2>
+        <p><strong>Front-End:</strong> HTML5, CSS3, JavaScript (ES6+), React, Accessibility (WCAG AA/AAA)</p>
+        <p><strong>Design:</strong> Figma, Design Tokens, Component Systems, Prototyping</p>
+        <p><strong>Back-End:</strong> Node.js, Python, RESTful APIs, Database Design</p>
+        <p><strong>Specializations:</strong> Neurodivergent UX, Aerospace Interfaces, Educational Tools, Large Data Sets</p>
+      </section>
+
+      <!-- NEURODIVERGENT IDENTITY -->
+      <section class="about-section">
+        <h2>Why Neurodivergence Matters</h2>
+        <p>
+          I am a neurodivergent. This isn't a footnote—it's a lens.
+        </p>
+        <p>
+          Neurodivergent people process information differently. We notice when interfaces create unnecessary 
+          friction. We feel the cost of poor contrast, chaotic layouts, and unpredictable interactions.
+        </p>
+        <p>
+          My neurodivergence makes me a better designer because I build for the edges first. 
+          When you design for cognitive accessibility, everyone benefits.
+        </p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- MINIMAL CONTACT CTA -->
+  <div style="text-align: center; padding: var(--space-xl) var(--space-lg); background: rgba(89, 164, 225, 0.05); border-top: 1px solid rgba(89, 164, 225, 0.2);">
+    <h3 style="color: var(--color-highlight); margin-bottom: var(--space-sm);">Let's work together</h3>
+    <p style="color: var(--color-starlight); margin-bottom: var(--space-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+      Available for freelance work, consulting, and speaking engagements focused on accessibility, neurodivergent UX, and aerospace interface design.
+    </p>
+    <a href="index.html#contact" class="cta-button" style="display: inline-block;">Get in Touch →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
+    <p style="margin-top: var(--space-sm);">
+      <a href="https://linkedin.com" style="margin: 0 var(--space-sm);">LinkedIn</a> | 
+      <a href="https://github.com" style="margin: 0 var(--space-sm);">GitHub</a> | 
+      <a href="https://codepen.io" style="margin: 0 var(--space-sm);">CodePen</a>
+    </p>
+    
+    <!-- Easter Egg: Holographic Profile -->
+    <div class="easter-egg-container">
+      <p class="easter-egg-hint">click the signal to take a ride 👇</p>
+      <a href="index.html" class="profile-rocket profile-hologram easter-egg-profile" aria-label="Return home in holographic mode">
+        <div class="holo-grid"></div>
+        <div class="scan-lines"></div>
+        <img src="images/profile_photo.png" alt="orbit.tiff holographic mode" class="profile-image">
+        <div class="holo-glitch"></div>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

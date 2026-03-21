@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>orbit.tiff - Neurodivergent Technologist & Full-Stack Developer</title>
+  <meta name="description" content="Mission dashboard portfolio for a neurodivergent technologist designing calm, mission-ready interfaces.">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img">
+      </a>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="aiPartnership.html">AI Partnership</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
+              Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main>
+    
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <button 
+        class="profile-rocket profile-nebula" 
+        id="profileRocket" 
+        aria-label="Launch to About page"
+        tabindex="0"
+      >
+        <div class="nebula-bg"></div>
+        <div class="orbital-rings">
+          <div class="ring ring-1"></div>
+          <div class="ring ring-2"></div>
+        </div>
+        <img 
+          src="images/profile_photo.png" 
+          alt="orbit.tiff profile" 
+          class="profile-image"
+        >
+      </button>
+      
+      <h1>Technologist designing neurodivergent-friendly, mission‑ready interfaces.</h1>
+      
+      <p class="hero-tagline">
+        Full‑stack dev building low‑cognitive‑load tools for aerospace and beyond.
+      </p>
+      
+      <a href="#projects" class="cta-button">View Projects</a>
+    </section>
+
+    <!-- ROCKET LAUNCH OVERLAY -->
+    <div class="launch-overlay" id="launchOverlay" role="dialog" aria-live="polite">
+      <div class="mission-patch" id="missionPatch">
+        <img src="images/profile_photo.png" alt="Mission patch">
+        <div class="rocket-icon">🚀</div>
+      </div>
+      <div class="countdown-text" id="countdownText">T-minus 5</div>
+      <p class="launch-message">Launching to About page...</p>
+      <button class="abort-button" id="abortButton" aria-label="Abort launch">
+        Abort Launch
+      </button>
+    </div>
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+      <div class="main-content">
+        <h2 class="section-title">Mission Portfolio</h2>
+        <p class="section-intro">Explore my recent projects across UX, accessibility, and aerospace interfaces.</p>
+
+        <div class="projects-starfield-container">
+          <canvas id="starfield-canvas" aria-hidden="true"></canvas>
+          
+          <div class="projects-grid" role="region" aria-label="Project gallery">
+            
+            <!-- Project Card 1 -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <a href="https://txdevart.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Rusted Luxe website">
+                  <img src="images/projects/rustedLuxe.png" alt="Rusted Luxe Texas Horology website preview" class="project-image">
+                </a>
+              </div>
+              <div class="project-content">
+                <h3>Rusted Luxe:Texas Horology </h3>
+                <p>A refined WooCommerce experience crafted for collectors who appreciate the art and heritage of luxury timepieces. The site blends modern WordPress design with a warm, Texas‑inspired aesthetic, showcasing premium watches through elegant product layouts, smooth navigation, and a boutique‑style shopping flow. It highlights craftsmanship, authenticity, and elevated retail presentation—bringing a high‑end horology brand to life online.</p>
+                <div class="project-tags">
+                  <span class="tag">UX</span>
+                  <span class="tag">Aerospace</span>
+                  <span class="tag">Figma</span>
+                </div>
+                <a href="https://txdevart.com" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
+              </div>
+            </article>
+
+            <!-- Project Card 2 -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <a href="https://echelon-timepieces.myshopify.com" target="_blank" rel="noopener noreferrer" aria-label="Visit Echelon Timepieces store" class="carousel-link">
+                  <div class="project-carousel" data-carousel="card2">
+                  <div class="carousel-track">
+                    <img src="images/projects/card2-img1.png" alt="Accessibility Toolkit - View 1" class="project-image">
+                    <img src="images/projects/card2-img2.png" alt="Accessibility Toolkit - View 2" class="project-image">
+                    <img src="images/projects/card2-img3.png" alt="Accessibility Toolkit - View 3" class="project-image">
+                  </div>
+                  <button class="carousel-btn carousel-prev" aria-label="Previous image">‹</button>
+                  <button class="carousel-btn carousel-next" aria-label="Next image">›</button>
+                  <div class="carousel-dots">
+                    <button class="carousel-dot active" aria-label="Image 1"></button>
+                    <button class="carousel-dot" aria-label="Image 2"></button>
+                    <button class="carousel-dot" aria-label="Image 3"></button>
+                  </div>
+                </div>
+                </a>
+              </div>
+              <div class="project-content">
+                <h3>Echelon Timepieces</h3>
+                <p>Echeleon Timepieces is a fully functional, public‑ready Shopify storefront born from a passion for timeless elegance with a contemporary edge. The brand was founded on the belief that luxury should feel both accessible and relevant, and the site reflects that vision through refined design, seamless navigation, and a polished retail experience. From product presentation to checkout flow, every detail is crafted to showcase modern sophistication while keeping high‑end horology within reach.</p>
+                <div class="project-tags">
+                  <span class="tag">UX</span>
+                  <span class="tag">E-commerce</span>
+                  <span class="tag">Shopify</span>
+                </div>
+                <a href="https://echelon-timepieces.myshopify.com" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
+              </div>
+            </article>
+
+            <!-- Project Card 3 -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <a href="https://txdevart.com/gym_therapy_experience/" target="_blank" rel="noopener noreferrer" aria-label="Visit GTX Gym Therapy Experience website">
+                  <img src="images/projects/GTX.png" alt="GTX Gym Therapy Experience website preview" class="project-image">
+                </a>
+              </div>
+              <div class="project-content">
+                <h3>GTX: Gym Therapy Experience</h3>
+                <p>Gym Therapy Experience is a Bootstrap‑built concept site that blends fitness, recovery, and real physical therapy into one accessible, energetic space. Designed around a playful, movement‑driven aesthetic, the site showcases a gym where members train alongside licensed therapists in a buddy‑system model that reduces injuries and builds confidence. Every session is followed by access to in‑house recovery stations—TENS units, saunas, hot/cold compress therapy, plunges, and professional‑level PT massages—creating an environment where getting fit and getting well finally meet without the high cost of traditional therapy.</p>
+                <div class="project-tags">
+                  <span class="tag">JS</span>
+                  <span class="tag">Health & Wellness</span>
+                  <span class="tag">Bootstrap</span>
+                </div>
+
+                <a href="https://txdevart.com/gym_therapy_experience/" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRAND & MARKETING MISSIONS SECTION -->
+    <section class="projects-section marketing-section" id="marketing">
+      <div class="main-content">
+        <h2 class="section-title">Brand & Marketing Missions</h2>
+        <p class="section-intro">Strategic campaigns, logo design, and brand identity work across diverse platforms and industries.</p>
+
+        <div class="projects-grid" role="region" aria-label="Marketing project showcase">
+          
+          <!-- Marketing Featured Card 1: Logo Portfolio -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
+                <span class="placeholder-icon">🎨</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Logo Design Portfolio</h3>
+              <p>Coming soon</p>
+              <div class="project-tags">
+                <span class="tag">Branding</span>
+                <span class="tag">Logo Design</span>
+                <span class="tag">Illustrator</span>
+              </div>
+              <a href="logo-gallery.html" class="project-link">View Gallery →</a>
+            </div>
+          </article>
+
+          <!-- Marketing Featured Card 2: Skincare Campaign -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <img src="images/marketing/starling.jpg" alt="Skincare Brand Social Campaign preview" class="project-image">
+            </div>
+            <div class="project-content">
+              <h3>Skincare Brand Social Campaign</h3>
+              <p>My social campaign for Starling Skincare showcased my ability to write authentically for the web and connect directly with a brand’s core audience. Their products are pure, free of harmful ingredients, and ideal for people with sensitive skin—making honest, research‑driven storytelling essential. My product review resonated so strongly that the company featured it as the centerpiece of one of their email campaigns. Through Instagram content, emailers, and targeted marketing pieces, I developed creative, on‑brand messaging that elevated their clean, modern, skin‑positive identity and demonstrated how thoughtful content creation can lead to discovering products that truly work.
+</p>
+              <div class="project-tags">
+                <span class="tag">Marketing</span>
+                <span class="tag">Social Media</span>
+                <span class="tag">Photoshop</span>
+              </div>
+              <a href="works.html#marketing" class="project-link">View Case Study →</a>
+            </div>
+          </article>
+
+          <!-- Marketing Featured Card 3: Lake Resort Campaign -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #FFD93D 0%, #BC5090 100%);">
+                <span class="placeholder-icon">📣</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Lake Resort Campaign</h3>
+              <p>Coming soon</p>
+              <div class="project-tags">
+                <span class="tag">Marketing</span>
+                <span class="tag">Print Design</span>
+                <span class="tag">Branding</span>
+              </div>
+              <a href="works.html#marketing" class="project-link">View Campaign →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <a href="works.html#marketing" class="cta-button">View All Marketing Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREATIVE MISSIONS SECTION -->
+    <section class="projects-section creative-section" id="creative">
+      <div class="main-content">
+        <h2 class="section-title">Creative Missions</h2>
+        <p class="section-intro">Original digital artwork and illustrations showcasing creative vision and technical skill in Photoshop and Illustrator.</p>
+
+        <div class="projects-grid" role="region" aria-label="Digital art showcase">
+          
+          <!-- Creative Featured Card 1 -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #4ECDC4 0%, #FF6B9D 100%);">
+                <span class="placeholder-icon">🖌️</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Digital Illustration Series</h3>
+              <p>Coming soon</p>
+              <div class="project-tags">
+                <span class="tag">Digital Art</span>
+                <span class="tag">Photoshop</span>
+                <span class="tag">Illustration</span>
+              </div>
+              <a href="works.html#creative" class="project-link">View Artwork →</a>
+            </div>
+          </article>
+
+          <!-- Creative Featured Card 2 -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B9D 0%, #C44569 100%);">
+                <span class="placeholder-icon">✏️</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Vector Art Collection</h3>
+              <p>Coming soon</p>
+              <div class="project-tags">
+                <span class="tag">Digital Art</span>
+                <span class="tag">Illustrator</span>
+                <span class="tag">Vector</span>
+              </div>
+              <a href="works.html#creative" class="project-link">View Collection →</a>
+            </div>
+          </article>
+
+          <!-- Creative Featured Card 3 -->
+          <article class="project-card">
+            <div class="project-image-wrapper">
+              <div class="project-placeholder" style="background: linear-gradient(135deg, #C44569 0%, #4ECDC4 100%);">
+                <span class="placeholder-icon">🎨</span>
+              </div>
+            </div>
+            <div class="project-content">
+              <h3>Creative Design Work</h3>
+              <p>Coming soon</p>
+              <div class="project-tags">
+                <span class="tag">Digital Art</span>
+                <span class="tag">Mixed Media</span>
+                <span class="tag">Creative</span>
+              </div>
+              <a href="works.html#creative" class="project-link">View Portfolio →</a>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align: center; margin-top: var(--space-xl);">
+          <a href="works.html#creative" class="cta-button">View All Creative Work</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <h2>Initiate Contact Sequence</h2>
+        <p class="contact-intro">
+          Have a mission in mind? Let's collaborate on building accessible, mission-ready interfaces.
+        </p>
+
+        <div class="contact-methods">
+          <!-- Contact Form -->
+          <div class="contact-form-wrapper">
+            <h3>Send a Transmission</h3>
+            <form class="contact-form" id="contactForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  required 
+                  placeholder="Your name"
+                  aria-required="true"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  required 
+                  placeholder="your.email@example.com"
+                  aria-required="true"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows="5" 
+                  required 
+                  placeholder="Tell me about your project or idea..."
+                  aria-required="true"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="contact-submit">
+                🚀 Launch Message
+              </button>
+            </form>
+          </div>
+
+          <!-- Direct Contact -->
+          <div class="contact-direct">
+            <h3>Direct Contact</h3>
+            <div class="contact-links">
+              <a href="mailto:texashero3@gmail.com" class="contact-link">
+                <span class="contact-icon">📧</span>
+                <span class="contact-label">texashero3@gmail.com</span>
+              </a>
+              <a href="https://linkedin.com" class="contact-link" target="_blank" rel="noopener">
+                <span class="contact-icon">🔗</span>
+                <span class="contact-label">LinkedIn Profile</span>
+              </a>
+              <a href="https://github.com" class="contact-link" target="_blank" rel="noopener">
+                <span class="contact-icon">💻</span>
+                <span class="contact-label">GitHub Portfolio</span>
+              </a>
+            </div>
+
+            <div class="availability-status">
+              <div class="status-indicator"></div>
+              <p>Currently available for freelance projects and full-time opportunities</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TELESCOPE FOLLOWER -->
+    <div class="telescope-follower" id="telescopeFollower" aria-hidden="true">
+      🔭
+    </div>
+
+    <!-- PROJECT CARD POPUP -->
+    <div class="popup-overlay" id="popupOverlay"></div>
+    <div class="project-card-popup" id="projectCardPopup" role="dialog" aria-modal="true">
+      <button class="popup-close" id="popupClose" aria-label="Close popup">×</button>
+      <span class="popup-icon" id="popupIcon">🚀</span>
+      <h2 class="popup-title" id="popupTitle">Project Title</h2>
+      <p class="popup-meta" id="popupMeta">Role • Timeline</p>
+      <p class="popup-description" id="popupDescription">Project description goes here.</p>
+      <div class="popup-tags" id="popupTags"></div>
+      <a href="#" class="popup-cta" id="popupCTA">View Full Case Study →</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
+    
+    <!-- Easter Egg: Holographic Profile -->
+    <div class="easter-egg-container">
+      <p class="easter-egg-hint">click the signal to take a ride 👇</p>
+      <button 
+        class="profile-rocket profile-hologram easter-egg-profile" 
+        id="easterEggProfile"
+        aria-label="Hidden holographic profile"
+        title="Holographic mode activated"
+      >
+        <div class="holo-grid"></div>
+        <div class="scan-lines"></div>
+        <img src="images/profile_photo.png" alt="orbit.tiff holographic mode" class="profile-image">
+        <div class="holo-glitch"></div>
+      </button>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

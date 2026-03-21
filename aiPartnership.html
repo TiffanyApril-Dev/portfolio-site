@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Working with AI - orbit.tiff</title>
+  <meta name="description" content="How orbit.tiff leverages AI as a work multiplier - embracing tools like Copilot, Claude, and ChatGPT to accelerate development.">
+  
+  <!-- Design Tokens & Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="orbit.tiff logo" class="site-logo-img">
+        <span>orbit.tiff</span>
+      </a>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="works.html">Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="aiPartnership.html" class="active">AI Partnership</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
+              Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- AI HERO -->
+    <section class="about-hero">
+      <h1>AI as a Work Multiplier</h1>
+      
+      <p class="hero-tagline">
+        Fresh perspective, not seasoned complacency. I see AI coding agents as rocket fuel for productivity,
+        not a threat to my career.
+      </p>
+    </section>
+
+    <!-- INTERACTIVE SKYMAP SECTION -->
+    <section class="ai-skymap-section">
+      <div class="main-content">
+        <h2 class="section-title">Explore My AI Toolkit</h2>
+        
+        <!-- Instructions Box -->
+        <div class="skymap-instructions">
+          <h3>🔭 How to Explore</h3>
+          <p>
+            <strong>Move your mouse</strong> across the starfield below to explore AI tools with your telescope cursor. 
+            <strong>Hover over the bright stars</strong> to reveal details about each tool I use.
+          </p>
+          <p>
+            <strong>Keyboard users:</strong> Press <kbd>Tab</kbd> to navigate between tools, then <kbd>Enter</kbd> to view details.
+            <strong>Mobile users:</strong> Tap any star directly.
+          </p>
+          <p class="reduce-motion-note">
+            Motion effects can be toggled off using the "Motion" button in the navigation above.
+          </p>
+        </div>
+
+        <!-- Starfield Container -->
+        <div class="ai-starfield-container">
+          <canvas id="ai-starfield-canvas" aria-hidden="true"></canvas>
+          
+          <!-- AI Tool Stars -->
+          <div class="ai-tools-constellation" role="region" aria-label="AI Tools Gallery">
+            
+            <!-- GitHub Copilot Star -->
+            <button class="ai-star" data-tool="copilot" style="left: 15%; top: 20%;" aria-label="Learn about GitHub Copilot">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">Copilot</span>
+            </button>
+
+            <!-- Claude Star -->
+            <button class="ai-star" data-tool="claude" style="left: 50%; top: 12%;" aria-label="Learn about Claude">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">Claude</span>
+            </button>
+
+            <!-- ChatGPT Star -->
+            <button class="ai-star" data-tool="chatgpt" style="left: 82%; top: 25%;" aria-label="Learn about ChatGPT">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">ChatGPT</span>
+            </button>
+
+            <!-- GitHub Codespaces Star -->
+            <button class="ai-star" data-tool="codespaces" style="left: 25%; top: 60%;" aria-label="Learn about GitHub Codespaces">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">Codespaces</span>
+            </button>
+
+            <!-- Codex Star -->
+            <button class="ai-star" data-tool="codex" style="left: 62%; top: 55%;" aria-label="Learn about Codex">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">Codex</span>
+            </button>
+
+            <!-- OpenClaw Star -->
+            <button class="ai-star" data-tool="openclaw" style="left: 78%; top: 78%;" aria-label="Learn about Continuous Learning">
+              <span class="star-icon">⭐</span>
+              <span class="star-label">Always Learning</span>
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- AI CONTENT -->
+    <div class="about-content">
+      
+      <!-- PHILOSOPHY -->
+      <section class="about-section">
+        <h2>My Approach to AI Partnership</h2>
+        <p>
+          I don't want to be a developer skating by on years of experience. I want to be someone 
+          <strong>fresh, energetic, and willing to embrace AI as an efficiency multiplier</strong> 
+          rather than viewing it as the end of my career.
+        </p>
+        <p>
+          AI tools like GitHub Copilot, Claude, ChatGPT, and emerging platforms aren't replacements 
+          for developers—they're accelerators. They free me to focus on architecture, problem-solving, 
+          and creative solutions while handling the repetitive heavy lifting.
+        </p>
+      </section>
+
+      <!-- LEARNING JOURNEY -->
+      <section class="about-section">
+        <h2>From Independent Learning to AI-Augmented Development</h2>
+        <p>
+          <strong>My first years in school</strong> were built on self-directed learning. I developed 
+          my own knowledge base, honed research skills, and learned to solve problems independently. 
+          That foundation of curiosity and resourcefulness shaped how I approach every project.
+        </p>
+        <p>
+          <strong>Last semester changed everything.</strong> We were able to use and learn AI tools 
+          for project assistance. Suddenly, I could prototype faster, debug more efficiently, and 
+          experiment with ideas that would have taken weeks to explore manually.
+        </p>
+        <p>
+          I didn't lose my skills—I multiplied them.
+        </p>
+      </section>
+
+      <!-- TOOLS I USE -->
+      <section class="about-section">
+        <h2>AI Tools in My Workflow</h2>
+        <ul class="values-list">
+          <li>
+            <strong>GitHub Copilot & Claude:</strong>
+            My primary coding partners for rapid prototyping, refactoring, and documentation. 
+            I used these to build <em>PageNotes</em>, a pixel-specific browser annotation system where 
+            notes 'stick' directly to the spot on the webpage you're viewing.
+          </li>
+          <li>
+            <strong>ChatGPT & Codex:</strong>
+            For brainstorming architecture, debugging complex issues, and learning new frameworks quickly.
+          </li>
+          <li>
+            <strong>GitHub Codespaces:</strong>
+            Cloud-based development environments that let me code anywhere, collaborate seamlessly, 
+            and spin up projects in seconds.
+          </li>
+          <li>
+            <strong>Gitflow:</strong>
+            Version control workflow that keeps my projects organized and deployment-ready.
+          </li>
+          <li>
+            <strong>Claude Sonnet in VS Code:</strong>
+            Advanced AI coding assistant integrated directly in my editor. Perfect for complex problem-solving 
+            and architectural planning. Using it alongside Copilot to build custom tools and applications.
+          </li>
+        </ul>
+      </section>
+
+      <!-- THE MULTIPLIER EFFECT -->
+      <section class="about-section">
+        <h2>The Multiplication Effect</h2>
+        <p>
+          Here's what AI does for my workflow:
+        </p>
+        <ul class="values-list">
+          <li>
+            <strong>Speed up iteration cycles.</strong>
+            I can make quick changes across many files that would take hours to recode manually. 
+            Want to test three different layout approaches? Done in minutes instead of days.
+          </li>
+          <li>
+            <strong>Accelerate my design process.</strong>
+            AI handles boilerplate code, pattern repetition, and syntax checking, freeing me to 
+            focus on user experience and creative problem-solving.
+          </li>
+          <li>
+            <strong>Enable ambitious projects.</strong>
+            PageNotes—a pixel-specific annotation system where notes stick to exact webpage locations—went 
+            from concept to working prototype in a fraction of the time traditional methods would require. 
+            My vision, AI-accelerated execution. Currently working on an even more ambitious aerospace 
+            gamification project (details coming soon).
+          </li>
+          <li>
+            <strong>Reduce cognitive load.</strong>
+            As a neurodivergent developer, offloading repetitive tasks to AI helps me conserve mental 
+            energy for the work that truly matters.
+          </li>
+        </ul>
+      </section>
+
+      <!-- REAL-WORLD EXAMPLE -->
+      <section class="about-section">
+        <h2>Case Study: Building PageNotes</h2>
+        <p>
+          <strong>PageNotes</strong> is a one-of-a-kind pixel-specific browser annotation system where notes 'stick' 
+          directly to the exact spot on any webpage you're viewing. The concept was born purely from my own vision, 
+          but brought to life with AI assistance—not AI domination.
+        </p>
+        <p>
+          I created the icons and iterated with Copilot and Claude to nail down all the fine details. 
+          The challenge wasn't just building a browser extension—it was creating persistent note positioning 
+          that survives page scrolling, resizing, and dynamic content changes.
+        </p>
+        <ul class="values-list">
+          <li><strong>My contribution:</strong> Original concept, UX design, icon creation, problem-solving</li>
+          <li><strong>AI contribution:</strong> Chrome Extension architecture guidance, storage API implementation, cross-browser compatibility debugging</li>
+        </ul>
+        <p>
+          I didn't need to spend months learning every Chrome API detail to build something functional and unique. 
+          AI helped me implement the technical foundation in record time, freeing me to focus on perfecting 
+          the user experience and persistent 'sticking' behavior that makes PageNotes special.
+        </p>
+        <p>
+          The result? A fully functional, polished extension with features I dreamed up, executed faster 
+          than traditional solo development—without sacrificing my learning or creative ownership.
+        </p>
+      </section>
+
+    </div>
+
+    <!-- AI PROJECTS SHOWCASE -->
+    <section class="ai-projects-section">
+      <div class="main-content">
+        <h2 class="section-title">Projects Built with AI</h2>
+        <p class="section-intro">Real work, accelerated by AI partnership. Some launched, some in progress, one classified... 👀</p>
+
+        <div class="ai-projects-starfield-container">
+          <canvas id="ai-projects-starfield-canvas" aria-hidden="true"></canvas>
+          
+          <div class="ai-projects-grid" role="region" aria-label="AI-assisted project gallery">
+            
+            <!-- PageNotes Project -->
+            <article class="ai-project-card">
+              <h3>🔖 PageNotes</h3>
+              <p>
+                A pixel-specific browser annotation system where notes 'stick' to exact webpage locations. 
+                My original concept and design, brought to life with AI assistance. Created custom icons, 
+                iterated through challenges, and built persistent positioning logic that survives page changes. 
+                One-of-a-kind tool born from my vision, accelerated by Claude and Copilot.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Chrome Extension</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Pixel Positioning</span>
+                <span class="tag">Claude & Copilot</span>
+              </div>
+            </article>
+
+            <!-- Portfolio Site -->
+            <article class="ai-project-card">
+              <h3>🚀 Portfolio Site</h3>
+              <p>
+                This mission-dashboard themed portfolio. AI helped design the interactive starfield, 
+                rocket launch animation, telescope cursor, and accessibility-first navigation. Built with 
+                vanilla JavaScript and neurodivergent UX principles.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML/CSS/JS</span>
+                <span class="tag">Accessibility</span>
+                <span class="tag">ChatGPT</span>
+                <span class="tag">Copilot</span>
+              </div>
+            </article>
+
+            <!-- Adobe Photoshop Custom Tool -->
+            <article class="ai-project-card">
+              <h3>🎨 Custom Adobe Photoshop Tool</h3>
+              <p>
+                Learning to build a custom tool for Adobe Photoshop. Using Claude and Copilot on my computer 
+                for planning and research, then Claude Sonnet in VS Code and GitHub when ready to code. 
+                Multi-stage AI collaboration: planning with conversation, coding with specialized tools. 
+                Proof that AI multiplies capability across the entire development lifecycle.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Adobe Photoshop</span>
+                <span class="tag">In Progress</span>
+                <span class="tag">Claude Sonnet</span>
+                <span class="tag">VS Code + GitHub</span>
+              </div>
+            </article>
+
+            <!-- Secret Aerospace App -->
+            <article class="ai-project-card">
+              <h3>🚀 Launch Commander [Stealth Mode]</h3>
+              <p>
+                Full-stack MEAN application (MongoDB, Express, Angular, Node.js) integrating multiple aerospace 
+                APIs including Launch Library 2, weather data, and educational resources. Built to handle large 
+                datasets of launch schedules, telemetry, and post-launch data accumulation. Features a custom 
+                data retrieval system that measures user interactions against real aerospace data, cataloging 
+                engagement patterns. AI-accelerated development enabling rapid iteration on complex data architecture. 
+                Launching via company partnership or independently through orbit.tiff labs. 👀
+              </p>
+              <div class="project-tags">
+                <span class="tag">MEAN Stack</span>
+                <span class="tag">Multiple APIs</span>
+                <span class="tag">Large Datasets</span>
+                <span class="tag">orbit.tiff labs</span>
+              </div>
+            </article>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI CONTENT CONTINUED -->
+    <div class="about-content">
+
+      <!-- WHAT I BRING -->
+      <section class="about-section">
+        <h2>What I Bring to a Team</h2>
+        <ul class="values-list">
+          <li>
+            <strong>Comfort with ambiguity.</strong>
+            Projects change. Requirements shift. I embrace that uncertainty as an opportunity to adapt 
+            and improve.
+          </li>
+          <li>
+            <strong>Independent work ethic.</strong>
+            I thrive on self-directed problem-solving. Give me a challenge and the tools, and I'll 
+            find a solution.
+          </li>
+          <li>
+            <strong>Strong time management.</strong>
+            AI helps me work faster, but discipline helps me work smarter. I prioritize ruthlessly 
+            and deliver on time.
+          </li>
+          <li>
+            <strong>Collaborative mindset.</strong>
+            I believe the best work happens when human creativity meets AI efficiency. I document my 
+            processes, share knowledge, and contribute to team success.
+          </li>
+          <li>
+            <strong>Fresh energy.</strong>
+            I'm not here to coast. I'm here to build, learn, and push boundaries with every project.
+          </li>
+        </ul>
+      </section>
+
+      <!-- CLOSING -->
+      <section class="about-section">
+        <h2>The Future is Collaborative</h2>
+        <p>
+          AI isn't replacing developers. It's elevating them.
+        </p>
+        <p>
+          I see a future where junior developers can compete with senior teams, where prototyping takes 
+          hours instead of weeks, and where the barrier to entry for ambitious projects is lowered 
+          for everyone.
+        </p>
+        <p>
+          I'm not afraid of that future. <strong>I'm building it.</strong>
+        </p>
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- TELESCOPE FOLLOWER -->
+  <div class="telescope-follower" id="telescopeFollower" aria-hidden="true">
+    🔭
+  </div>
+
+  <!-- AI TOOL POPUP -->
+  <div class="popup-overlay" id="aiPopupOverlay"></div>
+  <div class="ai-tool-popup" id="aiToolPopup" role="dialog" aria-modal="true">
+    <button class="popup-close" id="aiPopupClose" aria-label="Close popup">×</button>
+    <div class="popup-content" id="aiPopupContent">
+      <!-- Content injected by JavaScript -->
+    </div>
+  </div>
+
+  <!-- MINIMAL CONTACT CTA -->
+  <section class="contact-cta" id="contact">
+    <h2>Let's Build Together</h2>
+    <p>Interested in working with someone who sees AI as a superpower?</p>
+    <a href="mailto:your.email@example.com" class="cta-button">Get in Touch</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <p>&copy; 2026 orbit.tiff. Designed for clarity, built for accessibility.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+  
+</body>
+</html>

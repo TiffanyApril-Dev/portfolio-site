@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Works - orbit.tiff Mission Control</title>
+  <meta name="description" content="Explore mission-ready projects in UX, front-end development, accessibility, and aerospace.">
+  
+  <!-- Design Tokens & Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  
+  <!-- HEADER & NAVIGATION -->
+  <header class="site-header">
+    <div class="header-container">
+      <a href="index.html" class="site-logo">
+        <img src="images/logo.png" alt="orbit.tiff logo" class="site-logo-img">
+        <span>orbit.tiff</span>
+      </a>
+      
+      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="works.html" class="active">Works</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="aiPartnership.html">AI Partnership</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
+              Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
+    
+    <!-- WORKS HEADER -->
+    <section class="works-header">
+      <h1>Mission Control</h1>
+      <p class="hero-tagline">
+        Each project is a mission. Every mission has a purpose. Explore the constellation of work.
+      </p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" role="group" aria-label="Project filters">
+      <button class="filter-button active" data-filter="all">All Missions</button>
+      <button class="filter-button" data-filter="ux">UX</button>
+      <button class="filter-button" data-filter="frontend">Front-End</button>
+      <button class="filter-button" data-filter="accessibility">Accessibility</button>
+      <button class="filter-button" data-filter="aerospace">Aerospace</button>
+      <button class="filter-button" data-filter="interactive">Interactive Tool</button>
+      <button class="filter-button" data-filter="marketing">Marketing</button>
+      <button class="filter-button" data-filter="digital-art">Digital Art</button>
+    </div>
+
+    <!-- PROJECTS GRID -->
+    <section class="projects-grid" aria-label="Project showcase">
+      
+      <!-- Project 1: Rusted Luxe -->
+      <article class="mission-card" data-tags="ux frontend">
+        <div class="project-image-wrapper">
+          <a href="https://txdevart.com" target="_blank" rel="noopener noreferrer">
+            <img src="images/projects/rustedLuxe.png" alt="Rusted Luxe Texas Horology website" class="project-image">
+          </a>
+        </div>
+        <h3>Rusted Luxe: Texas Horology</h3>
+        <p class="mission-statement">
+          A refined WooCommerce experience crafted for collectors who appreciate the art and heritage of luxury timepieces. The site blends modern WordPress design with a warm, Texas‑inspired aesthetic, showcasing premium watches through elegant product layouts, smooth navigation, and a boutique‑style shopping flow.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">WordPress</span>
+          <span class="tag">WooCommerce</span>
+          <span class="tag">UX Design</span>
+        </div>
+        <a href="https://txdevart.com" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Site →</a>
+      </article>
+
+      <!-- Project 2: Echelon Timepieces -->
+      <article class="mission-card" data-tags="frontend ux">
+        <div class="project-image-wrapper">
+          <a href="https://echelon-timepieces.myshopify.com" target="_blank" rel="noopener noreferrer" class="carousel-link">
+            <div class="project-carousel" data-carousel="works-card2">
+              <div class="carousel-track">
+                <img src="images/projects/card2-img1.png" alt="Echelon Timepieces - View 1" class="project-image">
+                <img src="images/projects/card2-img2.png" alt="Echelon Timepieces - View 2" class="project-image">
+                <img src="images/projects/card2-img3.png" alt="Echelon Timepieces - View 3" class="project-image">
+              </div>
+              <button class="carousel-btn carousel-prev" aria-label="Previous image">‹</button>
+              <button class="carousel-btn carousel-next" aria-label="Next image">›</button>
+              <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Image 1"></button>
+                <button class="carousel-dot" aria-label="Image 2"></button>
+                <button class="carousel-dot" aria-label="Image 3"></button>
+              </div>
+            </div>
+          </a>
+        </div>
+        <h3>Echelon Timepieces</h3>
+        <p class="mission-statement">
+          A fully functional, public‑ready Shopify storefront born from a passion for timeless elegance with a contemporary edge. The brand reflects refined design, seamless navigation, and a polished retail experience that showcases modern sophistication while keeping high‑end horology within reach.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">E-commerce</span>
+          <span class="tag">UX Design</span>
+        </div>
+        <a href="https://echelon-timepieces.myshopify.com" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Store →</a>
+      </article>
+
+      <!-- Project 3: GTX -->
+      <article class="mission-card" data-tags="frontend">
+        <div class="project-image-wrapper">
+          <a href="https://txdevart.com/gym_therapy_experience/" target="_blank" rel="noopener noreferrer">
+            <img src="images/projects/GTX.png" alt="GTX Gym Therapy Experience website" class="project-image">
+          </a>
+        </div>
+        <h3>GTX: Gym Therapy Experience</h3>
+        <p class="mission-statement">
+          A Bootstrap‑built concept site that blends fitness, recovery, and real physical therapy into one accessible space. Designed around a playful, movement‑driven aesthetic, the site showcases a gym where members train alongside licensed therapists in a buddy‑system model.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">Bootstrap</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">Health & Wellness</span>
+        </div>
+        <a href="https://txdevart.com/gym_therapy_experience/" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Site →</a>
+      </article>
+
+      <!-- MARKETING MISSIONS -->
+      
+      <!-- Marketing Card 1: Logo Design Portfolio -->
+      <article class="mission-card" data-tags="marketing">
+        <div class="project-image-wrapper">
+          <a href="logo-gallery.html">
+            <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
+              <span class="placeholder-icon" aria-hidden="true">🎨</span>
+            </div>
+          </a>
+        </div>
+        <h3>Logo Design Portfolio</h3>
+        <p class="mission-statement">
+          Brand identity design showcase featuring custom logos across diverse industries and styles.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">Branding</span>
+          <span class="tag">Logo Design</span>
+          <span class="tag">Illustrator</span>
+        </div>
+        <a href="logo-gallery.html" class="mission-cta">View Gallery →</a>
+      </article>
+
+      <!-- Marketing Card 2: Skincare Campaign -->
+      <article class="mission-card" data-tags="marketing">
+        <div class="project-image-wrapper">
+          <img src="images/marketing/starling.jpg" alt="Skincare Brand Social Campaign" class="project-image">
+        </div>
+        <h3>Skincare Brand Social Campaign</h3>
+        <p class="mission-statement">
+          Multi-platform social media campaign with cohesive graphics, promotional content, and engagement strategy for a skincare brand.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">Marketing</span>
+          <span class="tag">Social Media</span>
+          <span class="tag">Photoshop</span>
+        </div>
+        <a href="#" class="mission-cta">View Case Study →</a>
+      </article>
+
+    </section>
+
+    <!-- WORK IN PROGRESS NOTICE -->
+    <div class="work-in-progress-notice" style="margin: var(--space-xl) auto; padding: var(--space-md); background: rgba(89, 164, 225, 0.1); border-left: 4px solid var(--color-accent-primary); border-radius: var(--radius-sm); max-width: 800px; text-align: center;">
+      <p style="color: var(--color-accent-primary); font-size: var(--font-size-sm); margin: 0;">
+        🚀 <strong>More projects in the launch queue</strong> — Portfolio actively under construction. Check back soon!
+      </p>
+    </div>
+
+  </main>
+
+  <!-- MINIMAL CONTACT CTA -->
+  <div style="text-align: center; padding: var(--space-xl) var(--space-lg); background: rgba(89, 164, 225, 0.05); border-top: 1px solid rgba(89, 164, 225, 0.2);">
+    <h3 style="color: var(--color-highlight); margin-bottom: var(--space-sm);">Interested in working together?</h3>
+    <p style="color: var(--color-starlight); margin-bottom: var(--space-lg); max-width: 600px; margin-left: auto; margin-right: auto;">
+      I'm available for freelance projects, consulting, and collaboration opportunities.
+    </p>
+    <a href="index.html#contact" class="cta-button" style="display: inline-block;">Get in Touch →</a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
+    <p style="margin-top: var(--space-sm);">
+      <a href="https://linkedin.com" style="margin: 0 var(--space-sm);">LinkedIn</a> | 
+      <a href="https://github.com" style="margin: 0 var(--space-sm);">GitHub</a> | 
+      <a href="https://codepen.io" style="margin: 0 var(--space-sm);">CodePen</a>
+    </p>
+    
+    <!-- Easter Egg: Holographic Profile -->
+    <div class="easter-egg-container">
+      <p class="easter-egg-hint">click the signal to take a ride 👇</p>
+      <a href="index.html" class="profile-rocket profile-hologram easter-egg-profile" aria-label="Return home in holographic mode">
+        <div class="holo-grid"></div>
+        <div class="scan-lines"></div>
+        <img src="images/profile_photo.png" alt="orbit.tiff holographic mode" class="profile-image">
+        <div class="holo-glitch"></div>
+      </a>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+  
+</body>
+</html>
