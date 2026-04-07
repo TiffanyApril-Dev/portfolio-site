@@ -7,15 +7,15 @@
 function initMotionPreference() {
   const motionToggle = document.getElementById('motionToggle');
   const motionStatus = document.getElementById('motionStatus');
-  
+
   if (!motionToggle) return;
 
   // Check system preference first
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
+
   // Check user's explicit choice in localStorage
   const userChoice = localStorage.getItem('motion-preference');
-  
+
   // Priority: user's explicit choice > system preference > default (motion on)
   let motionEnabled;
   if (userChoice !== null) {
@@ -57,7 +57,7 @@ function initStarfield() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  
+
   // Set canvas size
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
@@ -96,7 +96,7 @@ function initStarfield() {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     stars.forEach(star => {
       // Twinkle effect
       const twinkle = Math.sin(frame * star.twinkleSpeed) * 0.3;
@@ -132,7 +132,7 @@ function initRocketLaunch() {
   // Click handler for main profile rocket
   if (profileRocket) {
     profileRocket.addEventListener('click', startLaunchSequence);
-    
+
     // Keyboard handler (Enter or Space)
     profileRocket.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -148,7 +148,7 @@ function initRocketLaunch() {
       alert('🔮 Holographic mode discovered! Initiating secure transmission...');
       setTimeout(startLaunchSequence, 500);
     });
-    
+
     easterEggProfile.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
@@ -174,14 +174,14 @@ function initRocketLaunch() {
     // Clear timers
     if (countdownInterval) clearInterval(countdownInterval);
     if (launchTimeout) clearTimeout(launchTimeout);
-    
+
     // Remove active states
     launchOverlay.classList.remove('active');
     missionPatch.classList.remove('launching');
-    
+
     // Reset countdown text
     countdownText.textContent = 'T-minus 5';
-    
+
     // Optional: Show brief abort message
     countdownText.textContent = 'Launch Aborted';
     setTimeout(() => {
@@ -198,7 +198,7 @@ function initRocketLaunch() {
 
     // Show overlay
     launchOverlay.classList.add('active');
-    
+
     // Countdown from 5
     let countdown = 5;
     countdownText.textContent = `T-minus ${countdown}`;
@@ -210,10 +210,10 @@ function initRocketLaunch() {
       } else {
         countdownText.textContent = 'Liftoff! 🚀';
         clearInterval(countdownInterval);
-        
+
         // Start launch animation
         missionPatch.classList.add('launching');
-        
+
         // Redirect after animation completes (3 seconds)
         launchTimeout = setTimeout(() => {
           window.location.href = 'about.html';
@@ -244,7 +244,7 @@ function initRocketLanding() {
 // --- TELESCOPE CUSTOM CURSOR ---
 function initTelescopeFollower() {
   const telescope = document.getElementById('telescopeFollower');
-  
+
   if (!telescope) return;
 
   let mouseX = 0;
@@ -269,11 +269,11 @@ function initTelescopeFollower() {
       const ease = 0.15;
       currentX += (mouseX - currentX) * ease;
       currentY += (mouseY - currentY) * ease;
-      
+
       telescope.style.left = currentX + 'px';
       telescope.style.top = currentY + 'px';
     }
-    
+
     requestAnimationFrame(animateTelescope);
   }
 
@@ -281,12 +281,12 @@ function initTelescopeFollower() {
 
   // Scale up on hover over interactive elements
   const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .project-card');
-  
+
   interactiveElements.forEach(element => {
     element.addEventListener('mouseenter', () => {
       telescope.classList.add('active');
     });
-    
+
     element.addEventListener('mouseleave', () => {
       telescope.classList.remove('active');
     });
@@ -299,7 +299,7 @@ function initProjectCardPopup() {
   const popup = document.getElementById('projectCardPopup');
   const overlay = document.getElementById('popupOverlay');
   const closeBtn = document.getElementById('popupClose');
-  
+
   const popupIcon = document.getElementById('popupIcon');
   const popupTitle = document.getElementById('popupTitle');
   const popupMeta = document.getElementById('popupMeta');
@@ -398,7 +398,7 @@ function initProjectStars() {
 function initProjectFilters() {
   const filterButtons = document.querySelectorAll('.filter-button');
   const missionCards = document.querySelectorAll('.mission-card');
-  
+
   if (filterButtons.length === 0) return;
 
   // Function to apply filter
@@ -409,7 +409,7 @@ function initProjectFilters() {
     if (activeButton) {
       activeButton.classList.add('active');
     }
-    
+
     // Filter cards
     missionCards.forEach(card => {
       if (filter === 'all') {
@@ -430,7 +430,7 @@ function initProjectFilters() {
   if (urlHash && ['marketing', 'digital-art', 'creative'].includes(urlHash)) {
     const filterValue = urlHash === 'creative' ? 'digital-art' : urlHash;
     applyFilter(filterValue);
-    
+
     // Scroll to top of projects after a brief delay
     setTimeout(() => {
       const projectsGrid = document.querySelector('.projects-grid');
@@ -454,7 +454,7 @@ function initSmoothScroll() {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
       if (href === '#' || href === '#contact') return; // Skip placeholder links
-      
+
       const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
@@ -492,21 +492,21 @@ function initContactForm() {
 
   contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
-    
+
     const submitButton = contactForm.querySelector('.contact-submit');
     const originalText = submitButton.textContent;
-    
+
     // Get form data
     const formData = {
       name: contactForm.querySelector('#name').value,
       email: contactForm.querySelector('#email').value,
       message: contactForm.querySelector('#message').value
     };
-    
+
     // Disable button and show loading state
     submitButton.disabled = true;
     submitButton.textContent = '🚀 Launching...';
-    
+
     try {
       // ====== DEMO FORM SUBMISSION ======
       // This is currently a DEMO - form data is not saved or sent anywhere
@@ -523,14 +523,14 @@ function initContactForm() {
       //   3. Remove this JavaScript handler (Netlify processes server-side)
       //
       // ===================================
-      
+
       // Simulate form submission (DEMO ONLY)
       await new Promise(resolve => setTimeout(resolve, 1500));
-      
+
       // Success state
       submitButton.textContent = '✅ Message Sent!';
       submitButton.style.background = 'var(--color-pop-success)';
-      
+
       // Show success message
       const successMsg = document.createElement('div');
       successMsg.className = 'form-success-message';
@@ -545,10 +545,10 @@ function initContactForm() {
         font-weight: 600;
       `;
       contactForm.appendChild(successMsg);
-      
+
       // Reset form
       contactForm.reset();
-      
+
       // Reset button after 3 seconds
       setTimeout(() => {
         submitButton.disabled = false;
@@ -558,21 +558,21 @@ function initContactForm() {
           successMsg.remove();
         }
       }, 3000);
-      
+
       // Log form data for now (remove in production)
       console.log('Form submitted:', formData);
-      
+
     } catch (error) {
       // Error state
       submitButton.textContent = '❌ Error - Try Again';
       submitButton.style.background = 'rgba(255, 68, 68, 0.6)';
-      
+
       setTimeout(() => {
         submitButton.disabled = false;
         submitButton.textContent = originalText;
         submitButton.style.background = '';
       }, 3000);
-      
+
       console.error('Form submission error:', error);
     }
   });
@@ -581,42 +581,42 @@ function initContactForm() {
 // --- PROJECT CAROUSEL ---
 function initProjectCarousels() {
   const carousels = document.querySelectorAll('.project-carousel');
-  
+
   carousels.forEach(carousel => {
     const track = carousel.querySelector('.carousel-track');
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
     const dots = carousel.querySelectorAll('.carousel-dot');
     const images = carousel.querySelectorAll('.project-image');
-    
+
     if (!track || images.length === 0) return;
-    
+
     let currentIndex = 0;
     const totalImages = images.length;
-    
+
     function updateCarousel(index) {
       // Update track position
       const offset = -index * 100;
       track.style.transform = `translateX(${offset}%)`;
-      
+
       // Update dots
       dots.forEach((dot, i) => {
         dot.classList.toggle('active', i === index);
       });
-      
+
       currentIndex = index;
     }
-    
+
     function nextImage() {
       const newIndex = (currentIndex + 1) % totalImages;
       updateCarousel(newIndex);
     }
-    
+
     function prevImage() {
       const newIndex = (currentIndex - 1 + totalImages) % totalImages;
       updateCarousel(newIndex);
     }
-    
+
     // Button event listeners
     if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
@@ -625,7 +625,7 @@ function initProjectCarousels() {
         prevImage();
       });
     }
-    
+
     if (nextBtn) {
       nextBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -633,7 +633,7 @@ function initProjectCarousels() {
         nextImage();
       });
     }
-    
+
     // Dot event listeners
     dots.forEach((dot, index) => {
       dot.addEventListener('click', (e) => {
@@ -642,7 +642,7 @@ function initProjectCarousels() {
         updateCarousel(index);
       });
     });
-    
+
     // Keyboard navigation
     carousel.addEventListener('keydown', (e) => {
       if (e.key === 'ArrowLeft') {
@@ -651,25 +651,25 @@ function initProjectCarousels() {
         nextImage();
       }
     });
-    
+
     // Touch/swipe support
     let touchStartX = 0;
     let touchEndX = 0;
     const carouselLink = carousel.closest('a');
-    
+
     carousel.addEventListener('touchstart', (e) => {
       touchStartX = e.changedTouches[0].screenX;
     });
-    
+
     carousel.addEventListener('touchend', (e) => {
       touchEndX = e.changedTouches[0].screenX;
       handleSwipe(e);
     });
-    
+
     function handleSwipe(e) {
       const swipeThreshold = 50;
       const diff = touchStartX - touchEndX;
-      
+
       if (Math.abs(diff) > swipeThreshold) {
         // Prevent link navigation when swiping
         if (carouselLink) {
@@ -691,7 +691,7 @@ function initAIStarfield() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  
+
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -726,7 +726,7 @@ function initAIStarfield() {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     stars.forEach(star => {
       const twinkle = Math.sin(frame * star.twinkleSpeed) * 0.3;
       const currentOpacity = star.opacity + twinkle;
@@ -750,7 +750,7 @@ function initAIProjectsStarfield() {
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  
+
   function resizeCanvas() {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
@@ -785,7 +785,7 @@ function initAIProjectsStarfield() {
     }
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
+
     stars.forEach(star => {
       const twinkle = Math.sin(frame * star.twinkleSpeed) * 0.25;
       const currentOpacity = star.opacity + twinkle;
@@ -881,7 +881,7 @@ function initAIToolPopup() {
     if (!tool) return;
 
     let benefitsHTML = tool.benefits.map(b => `<li>${b}</li>`).join('');
-    
+
     popupContent.innerHTML = `
       <h3>${tool.title}</h3>
       <p>${tool.description}</p>
@@ -946,21 +946,39 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();         // Contact form handling
   initProjectCarousels();    // Project image carousels
   initTelescopeFollower();   // Global custom telescope cursor
-  
+
   // Page-specific features
   initRocketLaunch();        // Home page
   initRocketLanding();       // About page
   initProjectCardPopup();    // Home page - card popups
   initProjectStars();        // Home page - legacy support
   initProjectFilters();      // Works page
-  
+
   // AI Partnership page features
   initAIStarfield();         // AI tools starfield
   initAIProjectsStarfield(); // AI projects starfield
   initAIToolPopup();         // AI tool popup interactions
-  
+  initBizCardFlip();         // Mission Dossier business card tap-to-flip
+
   console.log('🚀 orbit.tiff mission control initialized');
 });
+
+// --- BUSINESS CARD TAP-TO-FLIP (mobile touch support) ---
+function initBizCardFlip() {
+  document.querySelectorAll('.biz-flip-card').forEach(card => {
+    card.addEventListener('click', () => {
+      card.classList.toggle('flipped');
+    });
+    // Keyboard: Enter or Space toggles flip
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        card.classList.toggle('flipped');
+      }
+    });
+  });
+}
+
 
 // --- SCREEN READER ONLY CLASS (if needed) ---
 // Add this to CSS if not already present:

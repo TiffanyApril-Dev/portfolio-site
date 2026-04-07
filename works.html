@@ -20,8 +20,7 @@
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="site-logo">
-        <img src="images/logo.png" alt="orbit.tiff logo" class="site-logo-img">
-        <span>orbit.tiff</span>
+        <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img">
       </a>
       
       <nav class="main-nav" role="navigation" aria-label="Main navigation">
@@ -60,6 +59,7 @@
       <button class="filter-button" data-filter="accessibility">Accessibility</button>
       <button class="filter-button" data-filter="aerospace">Aerospace</button>
       <button class="filter-button" data-filter="interactive">Interactive Tool</button>
+      <button class="filter-button" data-filter="php">PHP</button>
       <button class="filter-button" data-filter="marketing">Marketing</button>
       <button class="filter-button" data-filter="digital-art">Digital Art</button>
     </div>
@@ -118,7 +118,28 @@
         <a href="https://echelon-timepieces.myshopify.com" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Store →</a>
       </article>
 
-      <!-- Project 3: GTX -->
+      <!-- Project 3: Jaxon's Jewelry (JJ) -->
+      <!-- TODO: Replace href with live hosting URL and swap placeholder for screenshot (images/projects/jaxonsJewelry.png) -->
+      <article class="mission-card" data-tags="php frontend">
+        <div class="project-image-wrapper">
+          <a href="https://txdevart.com/jaxons_jewelry/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jaxon's Jewelry website">
+            <img src="images/projects/jaxons.png" alt="Jaxon's Jewelry website preview" class="project-image">
+          </a>
+        </div>
+        <h3>Jaxon's Jewelry</h3>
+        <p class="mission-statement">
+          A full‑featured PHP jewelry website with a reusable template include system, server‑side form validation, and a MySQL‑backed contact form featuring honeypot spam protection, input sanitization, and time‑check guards. Includes a Birthstone Sweepstakes module with a PHP dynamic participant table, plus a demo mode for safe portfolio hosting.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">PHP</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Form Validation</span>
+          <span class="tag">Server-Side</span>
+        </div>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Site →</a>
+      </article>
+
+      <!-- Project 4: GTX -->
       <article class="mission-card" data-tags="frontend">
         <div class="project-image-wrapper">
           <a href="https://txdevart.com/gym_therapy_experience/" target="_blank" rel="noopener noreferrer">
@@ -139,25 +160,33 @@
 
       <!-- MARKETING MISSIONS -->
       
-      <!-- Marketing Card 1: Logo Design Portfolio -->
-      <article class="mission-card" data-tags="marketing">
+      <!-- Marketing Card 1: PageNotes Browser Extension -->
+      <article class="mission-card" data-tags="interactive frontend">
         <div class="project-image-wrapper">
-          <a href="logo-gallery.html">
-            <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-              <span class="placeholder-icon" aria-hidden="true">🎨</span>
+          <div class="project-carousel" data-carousel="works-pagenotes">
+            <div class="carousel-track">
+              <img src="images/projects/pageNotes.png" alt="PageNotes extension shown active on a webpage" class="project-image">
+              <img src="images/projects/pageNotes2.png" alt="Close-up of a PageNotes sticky annotation icon pinned to a specific location on a page" class="project-image">
             </div>
-          </a>
+            <button class="carousel-btn carousel-prev" aria-label="Previous image">‹</button>
+            <button class="carousel-btn carousel-next" aria-label="Next image">›</button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active" aria-label="Image 1"></button>
+              <button class="carousel-dot" aria-label="Image 2"></button>
+            </div>
+          </div>
         </div>
-        <h3>Logo Design Portfolio</h3>
+        <h3>PageNotes</h3>
         <p class="mission-statement">
-          Brand identity design showcase featuring custom logos across diverse industries and styles.
+          A one‑of‑a‑kind pixel‑specific browser annotation system I conceived, designed, and built with AI assistance. Notes stick to exact coordinates on any webpage and stay anchored through scrolling, resizing, and dynamic content changes. Custom icons, Chrome Extensions API storage, and UX obsessively refined for low cognitive load.
         </p>
         <div class="mission-tags">
-          <span class="tag">Branding</span>
-          <span class="tag">Logo Design</span>
-          <span class="tag">Illustrator</span>
+          <span class="tag">Chrome Extension</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">AI-Assisted</span>
+          <span class="tag">UX Design</span>
         </div>
-        <a href="logo-gallery.html" class="mission-cta">View Gallery →</a>
+        <a href="aiPartnership.html#pagenotes" class="mission-cta">Read the Case Study →</a>
       </article>
 
       <!-- Marketing Card 2: Skincare Campaign -->
@@ -188,6 +217,50 @@
 
   </main>
 
+  <!-- MISSION DOSSIER SECTION -->
+  <section class="dossier-section" id="dossier" aria-label="Mission Dossier">
+    <div class="dossier-container">
+      <h2 class="section-title">Mission Dossier</h2>
+      <p class="section-intro">Classified assets for recruiters and collaborators.</p>
+
+      <div class="dossier-grid">
+
+        <!-- Resume Download Card -->
+        <div class="dossier-card resume-card">
+          <div class="dossier-card-inner">
+            <span class="dossier-icon" aria-hidden="true">📄</span>
+            <h3>Branded Resume</h3>
+            <p>Full mission brief — skills, experience, and objectives. One-click download, recruiter-ready.</p>
+            <a
+              href="t_morgan_branded_resume.pdf"
+              download="T_Morgan_Resume.pdf"
+              class="dossier-download-btn"
+              aria-label="Download T. Morgan branded resume PDF"
+            >
+              ⬇ Download Resume
+            </a>
+          </div>
+        </div>
+
+        <!-- Business Card Flip Card -->
+        <div class="dossier-card biz-card-wrapper" aria-label="Business card — hover or tap to flip">
+          <p class="flip-hint">Hover or tap to flip ↩</p>
+          <div class="biz-flip-card" tabindex="0" role="img" aria-label="orbit.tiff business card, front and back">
+            <div class="biz-flip-inner">
+              <div class="biz-flip-front">
+                <img src="images/front_busiCard.svg" alt="Business card front — orbit.tiff branding" class="biz-card-img">
+              </div>
+              <div class="biz-flip-back">
+                <img src="images/back_busiCard.svg" alt="Business card back — contact details" class="biz-card-img">
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <!-- MINIMAL CONTACT CTA -->
   <div style="text-align: center; padding: var(--space-xl) var(--space-lg); background: rgba(89, 164, 225, 0.05); border-top: 1px solid rgba(89, 164, 225, 0.2);">
     <h3 style="color: var(--color-highlight); margin-bottom: var(--space-sm);">Interested in working together?</h3>
@@ -201,8 +274,8 @@
   <footer class="site-footer">
     <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
     <p style="margin-top: var(--space-sm);">
-      <a href="https://linkedin.com" style="margin: 0 var(--space-sm);">LinkedIn</a> | 
-      <a href="https://github.com" style="margin: 0 var(--space-sm);">GitHub</a> | 
+      <a href="https://www.linkedin.com/in/tiffanymorganhill" style="margin: 0 var(--space-sm);">LinkedIn</a> | 
+      <a href="https://github.com/TiffanyApril-Dev/" style="margin: 0 var(--space-sm);">GitHub</a> | 
       <a href="https://codepen.io" style="margin: 0 var(--space-sm);">CodePen</a>
     </p>
     
@@ -220,6 +293,11 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
-  
+
+  <!-- TELESCOPE FOLLOWER -->
+  <div class="telescope-follower" id="telescopeFollower" aria-hidden="true">
+    🔭
+  </div>
+
 </body>
 </html>
