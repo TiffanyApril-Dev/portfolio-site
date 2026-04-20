@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>orbit.tiff - Neurodivergent Technologist & Full-Stack Developer</title>
+  <title>orbit.tiff — Full-Stack Developer & Designer</title>
   <meta name="description" content="Mission dashboard portfolio for a neurodivergent technologist designing calm, mission-ready interfaces.">
   
   <!-- Styles -->
@@ -15,6 +15,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
+  <canvas id="starfield-canvas" aria-hidden="true"></canvas>
   
   <!-- HEADER & NAVIGATION -->
   <header class="site-header">
@@ -23,16 +25,28 @@
         <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img">
       </a>
       
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="works.html">Works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="aiPartnership.html">AI Partnership</a></li>
+          <li><a href="aiPartnership.html">AI Lab</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#dossier" class="nav-resume">Resume ⬇</a></li>
           <li>
             <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
               Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+          <li>
+            <button class="cursor-toggle" id="cursorToggle" aria-label="Toggle cursor decoration">
+              Cursor: <span id="cursorStatus">On</span>
             </button>
           </li>
         </ul>
@@ -41,7 +55,7 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main>
+  <main id="main-content">
     
     <!-- HERO SECTION -->
     <section class="hero">
@@ -62,12 +76,9 @@
           class="profile-image"
         >
       </button>
-      
-      <h1>Technologist designing neurodivergent-friendly, mission‑ready interfaces.</h1>
-      
-      <p class="hero-tagline">
-        Full‑stack dev building low‑cognitive‑load tools for aerospace and beyond.
-      </p>
+      <p style="font-size: var(--font-size-sm); color: var(--color-starlight); margin-top: calc(var(--space-md) * -1); margin-bottom: var(--space-md);">Hi, I'm Tiffany — <em>orbit.tiff</em> is my brand. ↑ Click my photo to visit my About page.</p>
+
+      <h1>Full-stack developer building accessible, low-cognitive-load tools for aerospace and beyond.</h1>
       
       <a href="#projects" class="cta-button">View Projects</a>
     </section>
@@ -91,11 +102,27 @@
         <h2 class="section-title">Mission Portfolio</h2>
         <p class="section-intro">Explore my recent projects across UX, accessibility, and aerospace interfaces.</p>
 
-        <div class="projects-starfield-container">
-          <canvas id="starfield-canvas" aria-hidden="true"></canvas>
-          
-          <div class="projects-grid" role="region" aria-label="Project gallery">
-            
+          <div class="projects-grid mission-grid" role="region" aria-label="Project gallery">
+
+            <!-- Project Card: Launch Commander -->
+            <article class="project-card">
+              <div class="project-image-wrapper">
+                <a href="https://launch-commander.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Visit Launch Commander live app">
+                  <img src="images/projects/launchCommander.png" alt="Launch Commander app preview" class="project-image">
+                </a>
+              </div>
+              <div class="project-content">
+                <h3>Launch Commander</h3>
+                <p>A full-stack aerospace web app that gamifies rocket launches with prediction challenges, leaderboards, and live mission data. Built with the MEAN stack and integrating Launch Library 2.</p>
+                <div class="project-tags">
+                  <span class="tag">Full-Stack</span>
+                  <span class="tag">MEAN</span>
+                  <span class="tag">Aerospace</span>
+                </div>
+                <a href="https://launch-commander.vercel.app" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
+              </div>
+            </article>
+
             <!-- Project Card 1 -->
             <article class="project-card">
               <div class="project-image-wrapper">
@@ -108,8 +135,8 @@
                 <p>A refined WooCommerce experience crafted for collectors who appreciate the art and heritage of luxury timepieces. The site blends modern WordPress design with a warm, Texas‑inspired aesthetic, showcasing premium watches through elegant product layouts, smooth navigation, and a boutique‑style shopping flow. It highlights craftsmanship, authenticity, and elevated retail presentation—bringing a high‑end horology brand to life online.</p>
                 <div class="project-tags">
                   <span class="tag">UX</span>
-                  <span class="tag">Aerospace</span>
-                  <span class="tag">Figma</span>
+                  <span class="tag">WordPress</span>
+                  <span class="tag">WooCommerce</span>
                 </div>
                 <a href="https://txdevart.com" class="project-link" target="_blank" rel="noopener noreferrer">View Project →</a>
               </div>
@@ -157,17 +184,16 @@
             </article>
 
           </div>
-        </div>
       </div>
     </section>
 
     <!-- ORBIT PAGES & INTERACTIVE LAB SECTION -->
     <section class="projects-section orbit-pages-section" id="orbit-pages">
       <div class="main-content">
-        <h2 class="section-title">Orbit Pages & Interactive Lab</h2>
+        <h2 class="section-title">Orbit Interactive Lab</h2>
         <p class="section-intro">Specialized pages, interactive tools, and art & design showcases built into this very portfolio.</p>
 
-        <div class="projects-grid" role="region" aria-label="Orbit pages and interactive features">
+        <div class="projects-grid orbit-grid" role="region" aria-label="Orbit pages and interactive features">
 
           <!-- Orbit Card 1: AI Partnership -->
           <article class="project-card">
@@ -194,9 +220,7 @@
           <article class="project-card">
             <div class="project-image-wrapper">
               <a href="logo-gallery.html" aria-label="View Logo Design Portfolio">
-                <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-                  <span class="placeholder-icon">🎨</span>
-                </div>
+                <img src="images/marketing/logos/orbit.tiff.png" alt="orbit.tiff logo — logo design sample" class="project-image logo-sample">
               </a>
             </div>
             <div class="project-content">
@@ -240,73 +264,39 @@
             </div>
           </article>
 
-        </div>
+              <!-- Orbit: Skincare Brand Social Campaign (moved from Marketing) -->
+              <article class="project-card">
+                <div class="project-image-wrapper">
+                  <img src="images/marketing/starling.jpg" alt="Skincare Brand Social Campaign preview" class="project-image">
+                </div>
+                <div class="project-content">
+                  <h3>Skincare Brand Social Campaign</h3>
+                  <p class="desc-short">A social campaign that connected an audience to a clean skincare brand through authentic storytelling, email campaigns, and social content—resulting in increased engagement and product placement.</p>
+                  <div class="project-tags">
+                    <span class="tag">Marketing</span>
+                    <span class="tag">Social Media</span>
+                    <span class="tag">Photoshop</span>
+                  </div>
+                  <a href="works.html#marketing" class="project-link">View Case Study →</a>
+                </div>
+              </article>
+
+            </div>
       </div>
     </section>
 
     <!-- BRAND & MARKETING MISSIONS SECTION -->
     <section class="projects-section marketing-section" id="marketing">
       <div class="main-content">
-        <h2 class="section-title">Brand & Marketing Missions</h2>
-        <p class="section-intro">Strategic campaigns, logo design, and brand identity work across diverse platforms and industries.</p>
+        <!-- Marketing header removed for a leaner homepage -->
 
         <div class="projects-grid" role="region" aria-label="Marketing project showcase">
           
-          <!-- Marketing Featured Card 1: Logo Portfolio -->
-          <article class="project-card">
-            <div class="project-image-wrapper">
-              <div class="project-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-                <span class="placeholder-icon">🎨</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Logo Design Portfolio</h3>
-              <p>Coming soon</p>
-              <div class="project-tags">
-                <span class="tag">Branding</span>
-                <span class="tag">Logo Design</span>
-                <span class="tag">Illustrator</span>
-              </div>
-              <a href="logo-gallery.html" class="project-link">View Gallery →</a>
-            </div>
-          </article>
+          <!-- Duplicate Logo Design Portfolio card removed (kept in Orbit Pages section) -->
 
-          <!-- Marketing Featured Card 2: Skincare Campaign -->
-          <article class="project-card">
-            <div class="project-image-wrapper">
-              <img src="images/marketing/starling.jpg" alt="Skincare Brand Social Campaign preview" class="project-image">
-            </div>
-            <div class="project-content">
-              <h3>Skincare Brand Social Campaign</h3>
-              <p>My social campaign for Starling Skincare showcased my ability to write authentically for the web and connect directly with a brand’s core audience. Their products are pure, free of harmful ingredients, and ideal for people with sensitive skin—making honest, research‑driven storytelling essential. My product review resonated so strongly that the company featured it as the centerpiece of one of their email campaigns. Through Instagram content, emailers, and targeted marketing pieces, I developed creative, on‑brand messaging that elevated their clean, modern, skin‑positive identity and demonstrated how thoughtful content creation can lead to discovering products that truly work.
-</p>
-              <div class="project-tags">
-                <span class="tag">Marketing</span>
-                <span class="tag">Social Media</span>
-                <span class="tag">Photoshop</span>
-              </div>
-              <a href="works.html#marketing" class="project-link">View Case Study →</a>
-            </div>
-          </article>
+          <!-- Skincare card moved to Orbit Pages section -->
 
-          <!-- Marketing Featured Card 3: Lake Resort Campaign -->
-          <article class="project-card">
-            <div class="project-image-wrapper">
-              <div class="project-placeholder" style="background: linear-gradient(135deg, #FFD93D 0%, #BC5090 100%);">
-                <span class="placeholder-icon">📣</span>
-              </div>
-            </div>
-            <div class="project-content">
-              <h3>Lake Resort Campaign</h3>
-              <p>Coming soon</p>
-              <div class="project-tags">
-                <span class="tag">Marketing</span>
-                <span class="tag">Print Design</span>
-                <span class="tag">Branding</span>
-              </div>
-              <a href="works.html#marketing" class="project-link">View Campaign →</a>
-            </div>
-          </article>
+          <!-- Lake Resort Campaign removed for a more concise homepage -->
 
         </div>
 
@@ -320,7 +310,7 @@
     <section class="dossier-section" id="dossier" aria-label="Mission Dossier">
       <div class="dossier-container">
         <h2 class="section-title">Mission Dossier</h2>
-        <p class="section-intro">Classified assets for recruiters and collaborators.</p>
+        <p class="section-intro">Resume &amp; Downloads &mdash; credentials and contact, ready for your review.</p>
 
         <div class="dossier-grid">
 
@@ -427,7 +417,7 @@
                 <span class="contact-icon">🔗</span>
                 <span class="contact-label">LinkedIn Profile</span>
               </a>
-              <a href="https://github.com/TiffanyApril-Dev" rel="noopener">
+              <a href="https://github.com/TiffanyApril-Dev" target="_blank" rel="noopener">
                 <span class="contact-icon">💻</span>
                 <span class="contact-label">GitHub Portfolio</span>
               </a>
@@ -464,8 +454,10 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
-    
-    <!-- Easter Egg: Holographic Profile -->
+    <p style="margin-top: var(--space-sm); font-size: var(--font-size-sm);">
+      <a href="https://github.com/TiffanyApril-Dev/" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">GitHub</a> |
+      <a href="https://github.com/TiffanyApril-Dev/portfolio-site" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">View Portfolio Source</a>
+    </p>
     <div class="easter-egg-container">
       <p class="easter-egg-hint">click the signal to take a ride 👇</p>
       <button 
@@ -484,6 +476,7 @@
 
   <!-- JavaScript -->
   <script src="script.js"></script>
-  
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
 </body>
 </html>

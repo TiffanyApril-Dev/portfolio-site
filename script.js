@@ -245,7 +245,44 @@ function initRocketLanding() {
 function initTelescopeFollower() {
   const telescope = document.getElementById('telescopeFollower');
 
-  if (!telescope) return;
+  // FAILSAFE: if the telescope element is missing, ensure cursor is never hidden
+  if (!telescope) {
+    document.body.classList.remove('telescope-active');
+    return;
+  }
+
+  // Restore saved preference (default: on)
+  const savedPref = localStorage.getItem('cursor-decoration');
+  // Default to OFF for new visitors; only enable when explicitly set to 'on'
+  let cursorOn = savedPref === 'on';
+
+  function enableCursor() {
+    cursorOn = true;
+    document.body.classList.add('telescope-active');
+    telescope.style.opacity = '1';
+    localStorage.setItem('cursor-decoration', 'on');
+  }
+
+  function disableCursor() {
+    cursorOn = false;
+    document.body.classList.remove('telescope-active');
+    telescope.style.opacity = '0';
+    localStorage.setItem('cursor-decoration', 'off');
+  }
+
+  // Apply saved preference on load
+  if (cursorOn) {
+    enableCursor();
+  } else {
+    disableCursor();
+  }
+
+  // Expose toggle so the cursor toggle button can call it
+  window.toggleCursorDecoration = function () {
+    if (cursorOn) disableCursor();
+    else enableCursor();
+    return cursorOn;
+  };
 
   let mouseX = 0;
   let mouseY = 0;
@@ -258,22 +295,18 @@ function initTelescopeFollower() {
     mouseY = e.clientY;
   });
 
-  // Smooth animation loop
+  // Smooth animation loop — always running so position is ready when re-enabled
   function animateTelescope() {
     if (isMotionReduced()) {
-      // Instant follow if motion reduced
       telescope.style.left = mouseX + 'px';
       telescope.style.top = mouseY + 'px';
     } else {
-      // Smooth easing
       const ease = 0.15;
       currentX += (mouseX - currentX) * ease;
       currentY += (mouseY - currentY) * ease;
-
       telescope.style.left = currentX + 'px';
       telescope.style.top = currentY + 'px';
     }
-
     requestAnimationFrame(animateTelescope);
   }
 
@@ -281,15 +314,28 @@ function initTelescopeFollower() {
 
   // Scale up on hover over interactive elements
   const interactiveElements = document.querySelectorAll('a, button, input, textarea, select, .project-card');
-
   interactiveElements.forEach(element => {
-    element.addEventListener('mouseenter', () => {
-      telescope.classList.add('active');
-    });
+    element.addEventListener('mouseenter', () => telescope.classList.add('active'));
+    element.addEventListener('mouseleave', () => telescope.classList.remove('active'));
+  });
+}
 
-    element.addEventListener('mouseleave', () => {
-      telescope.classList.remove('active');
-    });
+// --- CURSOR DECORATION TOGGLE ---
+function initCursorToggle() {
+  const cursorToggle = document.getElementById('cursorToggle');
+  const cursorStatus = document.getElementById('cursorStatus');
+
+  if (!cursorToggle || !cursorStatus) return;
+
+  // Sync button label with saved preference (default: Off)
+  const savedPref = localStorage.getItem('cursor-decoration');
+  cursorStatus.textContent = savedPref === 'on' ? 'On' : 'Off';
+
+  cursorToggle.addEventListener('click', () => {
+    if (typeof window.toggleCursorDecoration === 'function') {
+      const isOn = window.toggleCursorDecoration();
+      cursorStatus.textContent = isOn ? 'On' : 'Off';
+    }
   });
 }
 
@@ -508,24 +554,26 @@ function initContactForm() {
     submitButton.textContent = '🚀 Launching...';
 
     try {
-      // ====== DEMO FORM SUBMISSION ======
-      // This is currently a DEMO - form data is not saved or sent anywhere
-      // 
-      // TO IMPLEMENT REAL FORM SUBMISSION:
-      // Option 1 - Formspree (with Student Developer Pack):
-      //   1. Sign up at formspree.io with student email
-      //   2. Create a form and get your form ID
-      //   3. POST to: https://formspree.io/f/YOUR_FORM_ID
-      // 
-      // Option 2 - Netlify Forms (if hosting on Netlify):
-      //   1. Add netlify attribute to form tag: <form netlify>
-      //   2. Deploy to Netlify - it handles the rest automatically
-      //   3. Remove this JavaScript handler (Netlify processes server-side)
-      //
-      // ===================================
+      // Submit to Formsubmit.co — no account needed.
+      // NOTE: The very first submission will send a one-time activation email
+      // to texashero3@gmail.com. Click the confirmation link once, then all
+      // future submissions will arrive in your inbox automatically.
+      const response = await fetch('https://formsubmit.co/ajax/texashero3@gmail.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `Portfolio contact from ${formData.name}`,
+          _captcha: 'false'
+        })
+      });
 
-      // Simulate form submission (DEMO ONLY)
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      if (!response.ok) throw new Error('Network response was not ok');
 
       // Success state
       submitButton.textContent = '✅ Message Sent!';
@@ -558,9 +606,6 @@ function initContactForm() {
           successMsg.remove();
         }
       }, 3000);
-
-      // Log form data for now (remove in production)
-      console.log('Form submitted:', formData);
 
     } catch (error) {
       // Error state
@@ -864,7 +909,7 @@ function initAIToolPopup() {
         'Complex algorithm implementation'
       ]
     },
-    openclaw: {
+    'always-learning': {
       title: 'Continuous Learning',
       description: 'Always expanding my AI toolkit with new tools and workflows. Currently building a custom Adobe Photoshop tool using Claude Sonnet in VS Code, and working on a top-secret aerospace gamification project. Exploring multi-stage AI collaboration across planning, research, and coding phases.',
       benefits: [
@@ -937,15 +982,75 @@ function initAIToolPopup() {
 }
 
 // --- INITIALIZE ALL FEATURES ON PAGE LOAD ---
+// --- HAMBURGER MENU ---
+function initHamburgerMenu() {
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.querySelector('.main-nav');
+  const navOverlay = document.getElementById('navOverlay');
+
+  if (!hamburger || !mainNav) return;
+
+  function openMenu() {
+    hamburger.setAttribute('aria-expanded', 'true');
+    mainNav.classList.add('open');
+    if (navOverlay) navOverlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // Move focus into the nav
+    const firstLink = mainNav.querySelector('a, button');
+    if (firstLink) firstLink.focus();
+  }
+
+  function closeMenu() {
+    hamburger.setAttribute('aria-expanded', 'false');
+    mainNav.classList.remove('open');
+    if (navOverlay) navOverlay.classList.remove('open');
+    document.body.style.overflow = '';
+    hamburger.focus();
+  }
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = hamburger.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Close when clicking overlay
+  if (navOverlay) {
+    navOverlay.addEventListener('click', closeMenu);
+  }
+
+  // Close when a nav link is clicked (single-page anchor links)
+  mainNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      if (mainNav.classList.contains('open')) closeMenu();
+    });
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mainNav.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+
+  // Close drawer when resizing back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && mainNav.classList.contains('open')) {
+      closeMenu();
+    }
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Core features
   initMotionPreference();
+  initHamburgerMenu();       // Mobile nav drawer
   initStarfield();
   initSmoothScroll();
   initA11yEnhancements();
   initContactForm();         // Contact form handling
   initProjectCarousels();    // Project image carousels
   initTelescopeFollower();   // Global custom telescope cursor
+  initCursorToggle();        // Cursor decoration toggle button
 
   // Page-specific features
   initRocketLaunch();        // Home page

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Logo Design Portfolio - orbit.tiff</title>
+  <title>Logo Gallery — orbit.tiff</title>
   <meta name="description" content="Brand identity and logo design portfolio by orbit.tiff">
   
   <!-- Design Tokens & Styles -->
@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
   
   <!-- HEADER & NAVIGATION -->
   <header class="site-header">
@@ -23,15 +24,28 @@
         <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img">
       </a>
       
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="works.html" class="active">Works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="aiPartnership.html">AI Lab</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#dossier" class="nav-resume">Resume ⬇</a></li>
           <li>
             <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
               Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+          <li>
+            <button class="cursor-toggle" id="cursorToggle" aria-label="Toggle cursor decoration">
+              Cursor: <span id="cursorStatus">On</span>
             </button>
           </li>
         </ul>
@@ -40,7 +54,7 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     
     <!-- GALLERY HEADER -->
     <section class="works-header">
@@ -54,115 +68,203 @@
     <!-- LOGO GALLERY GRID -->
     <section class="logo-gallery-section">
       <div class="logo-gallery-grid">
-        
-        <!-- Logo 1 - REPLACE WITH YOUR LOGO -->
+
+        <!-- Logo 1: Boss Food Truck -->
         <article class="logo-card">
           <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-              <span class="placeholder-text">Logo 1</span>
-            </div>
-            <!-- TO ADD YOUR LOGO: Replace the placeholder div above with:
-            <img src="images/marketing/logos/logo-1.png" alt="Logo name">
-            -->
+            <img src="images/marketing/logos/bossFoodTruck.jpg" alt="Boss Food Truck logo">
+          </div>
+          <div class="logo-info">
+            <h3>Boss Food Truck</h3>
+            <p class="logo-description">Food &amp; Beverage</p>
+          </div>
+        </article>
+
+        <!-- Logo 2: Boss Sandwich Shop -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/bossSS.png" alt="Boss Sandwich Shop logo">
+          </div>
+          <div class="logo-info">
+            <h3>Boss Sandwich Shop</h3>
+            <p class="logo-description">Food &amp; Beverage</p>
+          </div>
+        </article>
+
+        <!-- Logo 3: Cool Cat -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/coolCat.png" alt="Cool Cat logo">
+          </div>
+          <div class="logo-info">
+            <h3>Cool Cat</h3>
+            <p class="logo-description">Pet Spa</p>
+          </div>
+        </article>
+
+        <!-- Logo 4: Echelon -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/Echelon.png" alt="Echelon logo">
+          </div>
+          <div class="logo-info">
+            <h3>Echelon</h3>
+            <p class="logo-description">Luxury Retail</p>
+          </div>
+        </article>
+
+        <!-- Logo 5: GTX -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/GTX.png" alt="GTX logo">
+          </div>
+          <div class="logo-info">
+            <h3>GTX</h3>
+            <p class="logo-description">Sports &amp; Fitness</p>
+          </div>
+        </article>
+
+        <!-- Logo 6: HERO -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/HERO.png" alt="HERO logo">
+          </div>
+          <div class="logo-info">
+            <h3>HERO</h3>
+            <p class="logo-description">Non-profit &amp; Community Service</p>
+          </div>
+        </article>
+
+        <!-- Logo 7: Jaxon's Jewelry -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/jaxons.png" alt="Jaxon's Jewelry logo">
+          </div>
+          <div class="logo-info">
+            <h3>Jaxon's Jewelry</h3>
+            <p class="logo-description">Jewelry</p>
+          </div>
+        </article>
+
+        <!-- Logo 8: Launch Commander -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/launchCommander.png" alt="Launch Commander logo">
+          </div>
+          <div class="logo-info">
+            <h3>Launch Commander</h3>
+            <p class="logo-description">Aerospace</p>
+          </div>
+        </article>
+
+        <!-- Logo 9: Lily Bulb -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/lilyBulb.png" alt="Lily Bulb logo">
+          </div>
+          <div class="logo-info">
+            <h3>Lily Bulb</h3>
+            <p class="logo-description">Photography</p>
+          </div>
+        </article>
+
+        <!-- Logo 10: orbit.tiff -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/orbit.tiff.png" alt="orbit.tiff personal brand logo">
+          </div>
+          <div class="logo-info">
+            <h3>orbit.tiff</h3>
+            <p class="logo-description">Personal Brand</p>
+          </div>
+        </article>
+
+        <!-- Logo 11: Premier Realty -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/premierRealty.png" alt="Premier Realty logo">
+          </div>
+          <div class="logo-info">
+            <h3>Premier Realty</h3>
+            <p class="logo-description">Real Estate</p>
+          </div>
+        </article>
+
+        <!-- Logo 12: Prickly Stitch -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/pricklyStitch.png" alt="Prickly Stitch logo">
+          </div>
+          <div class="logo-info">
+            <h3>Prickly Stitch</h3>
+            <p class="logo-description">Custom Apparel</p>
+          </div>
+        </article>
+
+        <!-- Logo 13: Rusted Luxe -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/rustedLuxe.png" alt="Rusted Luxe logo">
+          </div>
+          <div class="logo-info">
+            <h3>Rusted Luxe</h3>
+            <p class="logo-description">Luxury Retail</p>
+          </div>
+        </article>
+
+        <!-- Logo 14: Texas Toast -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/texasToast.png" alt="Texas Toast logo">
+          </div>
+          <div class="logo-info">
+            <h3>Texas Toast</h3>
+            <p class="logo-description">Food &amp; Beverage</p>
+          </div>
+        </article>
+
+        <!-- Logo 15: TSTC Design Club -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/studentDC.png" alt="TSTC Design Club logo">
+          </div>
+          <div class="logo-info">
+            <h3>TSTC Design Club</h3>
+            <p class="logo-description">Academic / Club</p>
+          </div>
+        </article>
+
+        <!-- Logo 16: Student Design CLub logo Version two -->
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/designClubV2.png" alt="TSTC Design Club logo version two">
+          </div>
+          <div class="logo-info">
+            <h3>TSTC Design Club Version #2</h3>
+            <p class="logo-description">Academic / Club</p>
+          </div>
+        </article>
+
+
+        <!-- ==========================================
+          TO ADD A NEW LOGO — copy the block below,
+          paste it above this comment, and fill in:
+            - src:   images/marketing/logos/yourFile.png
+            - alt:   Brand Name logo
+            - h3:    Brand Name
+            - p:     Industry or description
+        =========================================== -->
+        <!--
+        <article class="logo-card">
+          <div class="logo-image-wrapper">
+            <img src="images/marketing/logos/yourFile.png" alt="Brand Name logo">
           </div>
           <div class="logo-info">
             <h3>Brand Name</h3>
             <p class="logo-description">Industry or description</p>
           </div>
         </article>
-
-        <!-- Logo 2 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FFD93D 0%, #BC5090 100%);">
-              <span class="placeholder-text">Logo 2</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 3 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #BC5090 0%, #FF6B6B 100%);">
-              <span class="placeholder-text">Logo 3</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 4 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-              <span class="placeholder-text">Logo 4</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 5 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FFD93D 0%, #BC5090 100%);">
-              <span class="placeholder-text">Logo 5</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 6 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #BC5090 0%, #FF6B6B 100%);">
-              <span class="placeholder-text">Logo 6</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 7 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 100%);">
-              <span class="placeholder-text">Logo 7</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- Logo 8 - REPLACE WITH YOUR LOGO -->
-        <article class="logo-card">
-          <div class="logo-image-wrapper">
-            <div class="logo-placeholder" style="background: linear-gradient(135deg, #FFD93D 0%, #BC5090 100%);">
-              <span class="placeholder-text">Logo 8</span>
-            </div>
-          </div>
-          <div class="logo-info">
-            <h3>Brand Name</h3>
-            <p class="logo-description">Industry or description</p>
-          </div>
-        </article>
-
-        <!-- ADD MORE LOGOS AS NEEDED - Just copy/paste a logo-card and change the number -->
+        -->
 
       </div>
     </section>
@@ -177,9 +279,20 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <p>&copy; 2026 orbit.tiff. All rights reserved.</p>
+    <p style="margin-top: var(--space-sm); font-size: var(--font-size-sm);">
+      <a href="https://github.com/TiffanyApril-Dev/" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">GitHub</a> |
+      <a href="https://github.com/TiffanyApril-Dev/portfolio-site" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">Portfolio Source</a>
+    </p>
   </footer>
 
   <!-- SCRIPTS -->
   <script src="script.js"></script>
+
+  <!-- TELESCOPE FOLLOWER -->
+  <div class="telescope-follower" id="telescopeFollower" aria-hidden="true">
+    🔭
+  </div>
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Working with AI - orbit.tiff</title>
+  <title>AI Lab — orbit.tiff</title>
   <meta name="description" content="How orbit.tiff leverages AI as a work multiplier - embracing tools like Copilot, Claude, and ChatGPT to accelerate development.">
   
   <!-- Design Tokens & Styles -->
@@ -15,24 +15,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
   
   <!-- HEADER & NAVIGATION -->
   <header class="site-header">
     <div class="header-container">
       <a href="index.html" class="site-logo">
-        <img src="images/logo.png" alt="orbit.tiff logo" class="site-logo-img"> 
+        <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img"> 
       </a>
       
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="works.html">Works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="aiPartnership.html" class="active">AI Partnership</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="aiPartnership.html" class="active">AI Lab</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#dossier" class="nav-resume">Resume ⬇</a></li>
           <li>
             <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
               Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+          <li>
+            <button class="cursor-toggle" id="cursorToggle" aria-label="Toggle cursor decoration">
+              Cursor: <span id="cursorStatus">On</span>
             </button>
           </li>
         </ul>
@@ -41,7 +54,7 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     
     <!-- AI HERO -->
     <section class="about-hero">
@@ -111,8 +124,8 @@
               <span class="star-label">Codex</span>
             </button>
 
-            <!-- OpenClaw Star -->
-            <button class="ai-star" data-tool="openclaw" style="left: 78%; top: 78%;" aria-label="Learn about Continuous Learning">
+            <!-- Always Learning Star -->
+            <button class="ai-star" data-tool="always-learning" style="left: 78%; top: 78%;" aria-label="Learn about Continuous Learning">
               <span class="star-icon">⭐</span>
               <span class="star-label">Always Learning</span>
             </button>
@@ -239,11 +252,6 @@
           <li><strong>My contribution:</strong> Original concept, UX design, icon creation, problem-solving</li>
           <li><strong>AI contribution:</strong> Chrome Extension architecture guidance, storage API implementation, cross-browser compatibility debugging</li>
         </ul>
-        <p>
-          I didn't need to spend months learning every Chrome API detail to build something functional and unique. 
-          AI helped me implement the technical foundation in record time, freeing me to focus on perfecting 
-          the user experience and persistent 'sticking' behavior that makes PageNotes special.
-        </p>
         <p>
           The result? A fully functional, polished extension with features I dreamed up, executed faster 
           than traditional solo development—without sacrificing my learning or creative ownership.
@@ -410,10 +418,14 @@
   <!-- FOOTER -->
   <footer class="site-footer" role="contentinfo">
     <p>&copy; 2026 orbit.tiff. Designed for clarity, built for accessibility.</p>
-  </footer>
+    <p style="margin-top: var(--space-sm); font-size: var(--font-size-sm);">
+      <a href="https://github.com/TiffanyApril-Dev/" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">GitHub</a> |
+      <a href="https://github.com/TiffanyApril-Dev/portfolio-site" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">Portfolio Source</a>
+    </p>
 
   <!-- SCRIPTS -->
   <script src="script.js"></script>
-  
+    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Works - orbit.tiff Mission Control</title>
+  <title>Works — orbit.tiff</title>
   <meta name="description" content="Explore mission-ready projects in UX, front-end development, accessibility, and aerospace.">
   
   <!-- Design Tokens & Styles -->
@@ -15,6 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <a href="#main-content" class="skip-to-main">Skip to main content</a>
   
   <!-- HEADER & NAVIGATION -->
   <header class="site-header">
@@ -23,16 +24,28 @@
         <img src="images/logo_transp.png" alt="orbit.tiff logo" class="site-logo-img">
       </a>
       
-      <nav class="main-nav" role="navigation" aria-label="Main navigation">
+      <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" role="navigation" aria-label="Main navigation">
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="works.html" class="active">Works</a></li>
           <li><a href="about.html">About</a></li>
-          <li><a href="aiPartnership.html">AI Partnership</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="aiPartnership.html">AI Lab</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="index.html#dossier" class="nav-resume">Resume ⬇</a></li>
           <li>
             <button class="motion-toggle" id="motionToggle" aria-label="Toggle motion effects">
               Motion: <span id="motionStatus">On</span>
+            </button>
+          </li>
+          <li>
+            <button class="cursor-toggle" id="cursorToggle" aria-label="Toggle cursor decoration">
+              Cursor: <span id="cursorStatus">On</span>
             </button>
           </li>
         </ul>
@@ -41,7 +54,7 @@
   </header>
 
   <!-- MAIN CONTENT -->
-  <main class="main-content">
+  <main class="main-content" id="main-content">
     
     <!-- WORKS HEADER -->
     <section class="works-header">
@@ -56,12 +69,13 @@
       <button class="filter-button active" data-filter="all">All Missions</button>
       <button class="filter-button" data-filter="ux">UX</button>
       <button class="filter-button" data-filter="frontend">Front-End</button>
-      <button class="filter-button" data-filter="accessibility">Accessibility</button>
+      <button class="filter-button" data-filter="fullstack">Full-Stack</button>
       <button class="filter-button" data-filter="aerospace">Aerospace</button>
+      <button class="filter-button" data-filter="accessibility">Accessibility</button>
       <button class="filter-button" data-filter="interactive">Interactive Tool</button>
       <button class="filter-button" data-filter="php">PHP</button>
+      <button class="filter-button" data-filter="python">Python</button>
       <button class="filter-button" data-filter="marketing">Marketing</button>
-      <button class="filter-button" data-filter="digital-art">Digital Art</button>
     </div>
 
     <!-- PROJECTS GRID -->
@@ -120,7 +134,7 @@
 
       <!-- Project 3: Jaxon's Jewelry (JJ) -->
       <!-- TODO: Replace href with live hosting URL and swap placeholder for screenshot (images/projects/jaxonsJewelry.png) -->
-      <article class="mission-card" data-tags="php frontend">
+      <article class="mission-card" data-tags="php frontend accessibility">
         <div class="project-image-wrapper">
           <a href="https://txdevart.com/jaxons_jewelry/" target="_blank" rel="noopener noreferrer" aria-label="Visit Jaxon's Jewelry website">
             <img src="images/projects/jaxons.png" alt="Jaxon's Jewelry website preview" class="project-image">
@@ -136,7 +150,7 @@
           <span class="tag">Form Validation</span>
           <span class="tag">Server-Side</span>
         </div>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Site →</a>
+        <a href="https://txdevart.com/jaxons_jewelry/" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live Site →</a>
       </article>
 
       <!-- Project 4: GTX -->
@@ -147,9 +161,9 @@
           </a>
         </div>
         <h3>GTX: Gym Therapy Experience</h3>
-        <p class="mission-statement">
-          A Bootstrap‑built concept site that blends fitness, recovery, and real physical therapy into one accessible space. Designed around a playful, movement‑driven aesthetic, the site showcases a gym where members train alongside licensed therapists in a buddy‑system model.
-        </p>
+          <p class="mission-statement">
+            A Bootstrap-built concept site that blends fitness, recovery, and real physical therapy into one accessible space. Designed around a playful, movement-driven aesthetic, the site showcases a gym where members train alongside licensed therapists in a buddy-system model.
+          </p>
         <div class="mission-tags">
           <span class="tag">Bootstrap</span>
           <span class="tag">JavaScript</span>
@@ -161,7 +175,7 @@
       <!-- MARKETING MISSIONS -->
       
       <!-- Marketing Card 1: PageNotes Browser Extension -->
-      <article class="mission-card" data-tags="interactive frontend">
+      <article class="mission-card" data-tags="interactive frontend accessibility">
         <div class="project-image-wrapper">
           <div class="project-carousel" data-carousel="works-pagenotes">
             <div class="carousel-track">
@@ -189,6 +203,44 @@
         <a href="aiPartnership.html#pagenotes" class="mission-cta">Read the Case Study →</a>
       </article>
 
+      <!-- Project: Launch Commander -->
+      <article class="mission-card" data-tags="fullstack frontend aerospace">
+        <div class="project-image-wrapper">
+          <a href="https://launch-commander.vercel.app" target="_blank" rel="noopener noreferrer">
+            <img src="images/projects/launchCommander.png" alt="Launch Commander app preview" class="project-image">
+          </a>
+        </div>
+        <h3>Launch Commander</h3>
+          <p class="mission-statement">
+            A full-stack aerospace web app that transforms rocket launch tracking into an interactive, competitive experience. Users predict mission outcomes (success probability, MECO timing, orbit altitude, payload deployment) and compete on a scored leaderboard. Built with the MEAN stack (MongoDB, Express.js, Angular, Node.js), Launch Commander integrates real-time data from the Launch Library 2 API to gamify commercial spaceflight for enthusiasts and students.
+          </p>
+        <div class="mission-tags">
+          <span class="tag">MongoDB</span>
+          <span class="tag">Express</span>
+          <span class="tag">Angular</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">Full-Stack</span>
+        </div>
+        <a href="https://launch-commander.vercel.app" target="_blank" rel="noopener noreferrer" class="mission-cta">View Live App →</a>
+      </article>
+
+      <!-- Project: Cosmos Custom Shirts -->
+      <article class="mission-card" data-tags="python fullstack">
+        <div class="project-image-wrapper">
+          <img src="images/projects/cosmos.png" alt="Cosmos custom shirts site preview" class="project-image">
+        </div>
+        <h3>Cosmos Custom Shirts</h3>
+        <p class="mission-statement">
+          A Python-powered custom apparel platform for building and ordering personalized shirts. Backend handles product logic, user customization, and order flow — demonstrating Python web development beyond basic scripting.
+        </p>
+        <div class="mission-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Full-Stack</span>
+          <span class="tag">E-commerce</span>
+        </div>
+        <a href="#" class="mission-cta" aria-disabled="true" style="opacity:0.5; pointer-events:none;">Live Site Coming Soon</a>
+      </article>
+
       <!-- Marketing Card 2: Skincare Campaign -->
       <article class="mission-card" data-tags="marketing">
         <div class="project-image-wrapper">
@@ -203,7 +255,7 @@
           <span class="tag">Social Media</span>
           <span class="tag">Photoshop</span>
         </div>
-        <a href="#" class="mission-cta">View Case Study →</a>
+        <a href="index.html#marketing" class="mission-cta">View Case Study →</a>
       </article>
 
     </section>
@@ -275,7 +327,8 @@
     <p>&copy; 2026 orbit.tiff. Built with clarity, consistency, and care.</p>
     <p style="margin-top: var(--space-sm);">
       <a href="https://www.linkedin.com/in/tiffanymorganhill" style="margin: 0 var(--space-sm);">LinkedIn</a> | 
-      <a href="https://github.com/TiffanyApril-Dev/" style="margin: 0 var(--space-sm);">GitHub</a> | 
+      <a href="https://github.com/TiffanyApril-Dev/" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">GitHub</a> | 
+      <a href="https://github.com/TiffanyApril-Dev/portfolio-site" target="_blank" rel="noopener noreferrer" style="margin: 0 var(--space-sm);">Portfolio Source</a> |
       <a href="https://codepen.io" style="margin: 0 var(--space-sm);">CodePen</a>
     </p>
     
@@ -298,6 +351,7 @@
   <div class="telescope-follower" id="telescopeFollower" aria-hidden="true">
     🔭
   </div>
+  <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
 
 </body>
 </html>
