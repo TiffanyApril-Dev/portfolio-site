@@ -1,3 +1,31 @@
+/* --- HERO INTRO PARAGRAPH (was inline style) --- */
+.hero-intro {
+  font-size: var(--font-size-sm);
+  color: var(--color-starlight);
+  margin-top: calc(var(--space-md) * -1);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+/* --- PROJECT PLACEHOLDER BG (was inline style) --- */
+.project-placeholder-bg {
+  background: linear-gradient(135deg, #0a0812 0%, #2a205a 50%, #59a4e1 100%);
+}
+
+/* --- MARKETING LINK WRAPPER (was inline style) --- */
+.marketing-link-wrapper {
+  text-align: center;
+  margin-top: var(--space-xl);
+}
+
+/* --- FOOTER LINKS (was inline style) --- */
+.footer-links {
+  margin-top: var(--space-sm);
+  font-size: var(--font-size-sm);
+}
+.footer-link {
+  margin: 0 var(--space-sm);
+}
 /* ===========================================
    ORBIT.TIFF PORTFOLIO - MAIN STYLES
    Mission Dashboard Theme
